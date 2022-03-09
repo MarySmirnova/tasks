@@ -4,8 +4,8 @@ import "github.com/MarySmirnova/tasks/pkg/storage/models"
 
 type DB []models.Task
 
-func (db DB) NewTask(models.Task) error {
-	return nil
+func (db DB) NewTask(models.Task) (int, error) {
+	return 0, nil
 }
 
 func (db DB) GetAllTasks() ([]models.Task, error) {
