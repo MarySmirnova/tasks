@@ -8,15 +8,15 @@ func (db DB) NewTask(models.Task) (int, error) {
 	return 0, nil
 }
 
-func (db DB) GetAllTasks() ([]models.Task, error) {
+func (db DB) GetTasks(author models.User) ([]*models.Task, error) {
 	return nil, nil
 }
 
-func (db DB) GetTasks(author models.User, label models.Label) ([]models.Task, error) {
+func (db DB) GetTasksByLabel(label models.Label) ([]*models.Task, error) {
 	return nil, nil
 }
 
-func (db DB) UpdateTask(id int) error {
+func (db DB) UpdateTask(task models.Task) error {
 	return nil
 }
 

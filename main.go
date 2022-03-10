@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/MarySmirnova/tasks/internal/config"
+	"github.com/MarySmirnova/tasks/pkg/storage/postgres"
 	"github.com/caarlos0/env/v6"
 	"github.com/joho/godotenv"
 )
@@ -17,5 +18,12 @@ func init() {
 }
 
 func main() {
+	db, err := postgres.NewStorage(cfg.Postgres)
+	if err != nil {
+		panic(err)
+	}
+	defer db.GetPGPool().Close()
+
+	//Здесь должно запускаться наше приложение.
 
 }

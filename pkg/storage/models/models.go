@@ -5,27 +5,25 @@ import (
 )
 
 type Task struct {
-	//json:
-	ID       int
-	Opened   pgtype.Timestamp
-	Closed   pgtype.Timestamp
-	Author   User
-	Assigned User
-	Title    string
-	Content  string
-	Label    []Label
+	ID       int              `json:"id"`
+	Opened   pgtype.Timestamp `json:"opened"`
+	Closed   pgtype.Timestamp `json:"closed"`
+	Author   User             `json:"author"`
+	Assigned User             `json:"assigned"`
+	Title    string           `json:"title"`
+	Content  string           `json:"content"`
+	Label    []Label          `json:"label"`
 
-	//not json:
 	AuthorID   int
 	AssignedID int
 }
 
 type User struct {
-	ID   int
-	Name string
+	ID   int    `json:"id"`
+	Name string `json:"name"`
 }
 
 type Label struct {
-	ID   int
-	Name string
+	ID   int    `json:"id"`
+	Name string `json:"name"`
 }
